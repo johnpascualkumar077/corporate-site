@@ -105,6 +105,88 @@
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
+        /* Sponsor button */
+        .btn-sponsor {
+            background-color: #f0c040;
+            border-color: #f0c040;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .btn-sponsor:hover {
+            background-color: #d4a820;
+            border-color: #d4a820;
+            color: #1a1a1a;
+        }
+
+        /* Stats section */
+        .stats-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #f0c040;
+            line-height: 1;
+        }
+
+        /* Article cards */
+        .article-card {
+            background: #1a1a2e;
+            border: 1px solid #4299e1;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            height: 100%;
+        }
+
+        .article-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(66, 153, 225, 0.25);
+            border-color: #f0c040;
+        }
+
+        .article-tag {
+            display: inline-block;
+            background: rgba(66, 153, 225, 0.15);
+            color: #4299e1;
+            border-radius: 20px;
+            padding: 2px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .article-read-link {
+            color: #f0c040;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .article-read-link:hover {
+            color: #d4a820;
+            text-decoration: underline;
+        }
+
+        /* Sponsor trust strip */
+        .sponsor-strip {
+            background: rgba(66, 153, 225, 0.04);
+            border-top: 1px solid rgba(66, 153, 225, 0.15);
+            border-bottom: 1px solid rgba(66, 153, 225, 0.15);
+        }
+
+        .sponsor-badge {
+            display: inline-block;
+            background: rgba(240, 192, 64, 0.1);
+            border: 1px solid #f0c040;
+            color: #f0c040;
+            border-radius: 20px;
+            padding: 4px 18px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -141,6 +223,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">お問い合わせ</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#articles">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="#contact" style="color:#f0c040;">Sponsor</a>
+                    </li>
                     <!-- ダークモード切り替えスイッチ -->
                     <li class="nav-item ms-lg-3">
                         <button class="btn btn-outline-light btn-sm rounded-pill" id="darkModeToggle">
@@ -156,8 +244,43 @@
         <!-- ヒーローセクション -->
         <section class="hero shadow">
             <div class="container" data-aos="zoom-in" data-aos-duration="1000">
-                <h1 class="display-4 fw-bold mb-4">未来を創造するパートナー</h1>
-                <p class="lead mb-0">最新のテクノロジーとデザインで、あなたのビジネスを次のステージへ。</p>
+                <h1 class="display-4 fw-bold mb-3">未来を創造するパートナー</h1>
+                <p class="mb-4" style="font-size:1.1rem;opacity:0.92;letter-spacing:0.02em;">
+                    AI Content Creator · Weekly AI tool reviews on Medium · Open for sponsorships ($150/article)
+                </p>
+                <p class="lead mb-5">最新のテクノロジーとデザインで、あなたのビジネスを次のステージへ。</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="#contact" class="btn btn-primary btn-lg rounded-pill fw-bold px-4 shadow">お問い合わせ</a>
+                    <a href="#contact" class="btn btn-sponsor btn-lg rounded-pill px-4 shadow">⭐ Sponsor me</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 実績カウンター / Stats -->
+        <section id="stats" class="stats-section py-5">
+            <div class="container">
+                <div class="row g-4 text-center" id="statsRow">
+                    <div class="col-6 col-md-4 col-lg" data-aos="fade-up" data-aos-delay="0">
+                        <div class="stat-number mb-1" data-target="10" data-suffix="+">0+</div>
+                        <div class="text-white-50 small fw-semibold">制作実績</div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg" data-aos="fade-up" data-aos-delay="80">
+                        <div class="stat-number mb-1" data-target="100" data-suffix="%">0%</div>
+                        <div class="text-white-50 small fw-semibold">顧客満足度</div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg" data-aos="fade-up" data-aos-delay="160">
+                        <div class="stat-number mb-1" data-target="3" data-suffix="">0</div>
+                        <div class="text-white-50 small fw-semibold">年の経験</div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg" data-aos="fade-up" data-aos-delay="240">
+                        <div class="stat-number mb-1" data-target="24" data-suffix="h">0h</div>
+                        <div class="text-white-50 small fw-semibold">最短納品</div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg" data-aos="fade-up" data-aos-delay="320">
+                        <div class="stat-number mb-1" data-target="1000" data-suffix="+">0+</div>
+                        <div class="text-white-50 small fw-semibold">Monthly Readers</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -241,6 +364,73 @@
             </div>
         </section>
 
+        <!-- Medium 掲載記事 / Featured Articles -->
+        <section id="articles" class="py-5" style="background:#0d1117;">
+            <div class="container" data-aos="fade-up">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-white mb-1">Medium 掲載記事</h2>
+                    <p class="text-white-50 mb-0">Featured Articles</p>
+                </div>
+                <div class="row g-4">
+                    <!-- Article 1 -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+                        <div class="article-card p-4">
+                            <span class="article-tag mb-3 d-inline-block">#ClaudeCode</span>
+                            <h5 class="text-white fw-bold mb-3" style="line-height:1.4;">
+                                Claude Code vs Cursor vs Codex — 30-Day Field Report
+                            </h5>
+                            <a href="https://medium.com/@johnpascualkumar077" target="_blank" rel="noopener"
+                                class="article-read-link">Read on Medium →</a>
+                        </div>
+                    </div>
+                    <!-- Article 2 -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="article-card p-4">
+                            <span class="article-tag mb-3 d-inline-block">#SoloDev</span>
+                            <h5 class="text-white fw-bold mb-3" style="line-height:1.4;">
+                                I Built 3 Web Apps in 30 Days Using Only AI Tools
+                            </h5>
+                            <a href="https://medium.com/@johnpascualkumar077" target="_blank" rel="noopener"
+                                class="article-read-link">Read on Medium →</a>
+                        </div>
+                    </div>
+                    <!-- Article 3 -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                        <div class="article-card p-4">
+                            <span class="article-tag mb-3 d-inline-block">#AITools</span>
+                            <h5 class="text-white fw-bold mb-3" style="line-height:1.4;">
+                                Claude Code Became #1 in 8 Months — Here's Why
+                            </h5>
+                            <a href="https://medium.com/@johnpascualkumar077" target="_blank" rel="noopener"
+                                class="article-read-link">Read on Medium →</a>
+                        </div>
+                    </div>
+                    <!-- Article 4 -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="article-card p-4">
+                            <span class="article-tag mb-3 d-inline-block">#CreatorEconomy</span>
+                            <h5 class="text-white fw-bold mb-3" style="line-height:1.4;">
+                                What $75–$150 Sponsored AI Articles Actually Look Like
+                            </h5>
+                            <a href="https://medium.com/@johnpascualkumar077" target="_blank" rel="noopener"
+                                class="article-read-link">Read on Medium →</a>
+                        </div>
+                    </div>
+                    <!-- Article 5 -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+                        <div class="article-card p-4">
+                            <span class="article-tag mb-3 d-inline-block">#LLM</span>
+                            <h5 class="text-white fw-bold mb-3" style="line-height:1.4;">
+                                Context Engineering: The 2026 Skill Replacing Prompt Engineering
+                            </h5>
+                            <a href="https://medium.com/@johnpascualkumar077" target="_blank" rel="noopener"
+                                class="article-read-link">Read on Medium →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- よくある質問 (FAQ) -->
         <section id="faq" class="py-5">
             <div class="container" data-aos="fade-up">
@@ -312,36 +502,83 @@
             </div>
         </section>
 
+        <!-- スポンサー実績 / Sponsors & Clients -->
+        <section class="sponsor-strip py-4">
+            <div class="container text-center">
+                <p class="text-muted small mb-3 fw-semibold text-uppercase" style="letter-spacing:0.08em;">Sponsors
+                    &amp; Clients</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap mb-3">
+                    <span class="sponsor-badge">PolloAI</span>
+                    <span class="sponsor-badge">YouWareAI</span>
+                </div>
+                <p class="text-muted small mb-0">Past sponsors · Accepting new partnerships from $150/article</p>
+            </div>
+        </section>
+
         <!-- お問い合わせフォーム -->
         <section id="contact" class="py-5">
             <div class="container" data-aos="fade-up">
                 <h2 class="text-center mb-5 fw-bold">お問い合わせ</h2>
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6">
-                        <form class="form-container p-4 p-md-5 rounded-4 shadow needs-validation" novalidate>
+                        <!-- Stripe Buy Section (Corporate/Sponsorship) -->
+                        <div class="text-center mb-5 p-4 border rounded-4 bg-white shadow-sm border-warning">
+                            <h4 class="fw-bold mb-2">💎 スポンサーシップ ・ プレミアムプラン </h4>
+                            <p class="text-muted small mb-3">AI開発支援、または媒体へのスポンサー掲載を今すぐ開始できます。</p>
+                            <div class="fs-3 fw-bold text-primary mb-3">$150 〜 / article</div>
+                            <a href="https://buy.stripe.com/4gMcN7cwc8g4cN36Dk0VO01" target="_blank"
+                                class="btn btn-warning btn-lg w-100 rounded-pill fw-bold shadow-sm">
+                                今すぐ申し込む (Stripe決済)
+                            </a>
+                        </div>
+
+                        <form action="https://api.web3forms.com/submit" method="POST"
+                            class="form-container p-4 p-md-5 rounded-4 shadow needs-validation" novalidate>
+                            <input type="hidden" name="access_key" value="527bce25-0b81-49e0-8a0f-f20adb4e722a">
+                            <input type="hidden" name="subject" value="Corporate Site Inquiry">
+                            <input type="hidden" name="from_name" value="Corporate Site Agent">
+
                             <div class="mb-3">
                                 <label for="name" class="form-label fw-bold">お名前</label>
-                                <input type="text" class="form-control form-control-lg bg-light bg-opacity-75" id="name"
+                                <input type="text" name="name"
+                                    class="form-control form-control-lg bg-light bg-opacity-75" id="name"
                                     placeholder="山田 太郎" required>
                                 <div class="invalid-feedback">お名前を入力してください。</div>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label fw-bold">メールアドレス</label>
-                                <input type="email" class="form-control form-control-lg bg-light bg-opacity-75"
-                                    id="email" placeholder="example@example.com" required>
+                                <input type="email" name="email"
+                                    class="form-control form-control-lg bg-light bg-opacity-75" id="email"
+                                    placeholder="example@example.com" required>
                                 <div class="invalid-feedback">正しいメールアドレスを入力してください。</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inquiry-type" class="form-label fw-bold">お問い合わせ種別</label>
+                                <select name="inquiry_type" class="form-select form-select-lg bg-light bg-opacity-75"
+                                    id="inquiry-type">
+                                    <option value="">選択してください / Select type</option>
+                                    <option value="general">一般的なお問い合わせ / General inquiry</option>
+                                    <option value="sponsorship">スポンサー・PR依頼 / Sponsorship</option>
+                                    <option value="development">開発依頼 / Development Request</option>
+                                </select>
                             </div>
                             <div class="mb-4">
                                 <label for="message" class="form-label fw-bold">お問い合わせ内容</label>
-                                <textarea class="form-control form-control-lg bg-light bg-opacity-75" id="message"
-                                    rows="5" placeholder="ご相談内容をご記入ください" required></textarea>
+                                <textarea name="message" class="form-control form-control-lg bg-light bg-opacity-75"
+                                    id="message" rows="5" placeholder="ご相談内容をご記入ください" required></textarea>
                                 <div class="invalid-feedback">お問い合わせ内容を入力してください。</div>
                             </div>
+                            <!-- Success Redirection -->
+                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
                             <div class="text-center">
                                 <button type="submit"
                                     class="btn btn-primary btn-lg w-100 rounded-pill fw-bold shadow">送信する</button>
                             </div>
                         </form>
+                        <p class="text-center text-muted small mt-3">
+                            For sponsorship inquiries: rate starts at $150/article · response within 24h
+                        </p>
                     </div>
                 </div>
             </div>
@@ -392,6 +629,31 @@
                 darkModeToggle.classList.remove('text-dark');
             }
         });
+
+        // カウンターアニメーション / Counter animation
+        function animateCounters() {
+            document.querySelectorAll('.stat-number').forEach(function (el) {
+                var target = parseInt(el.getAttribute('data-target'), 10);
+                var suffix = el.getAttribute('data-suffix') || '';
+                var current = 0;
+                var step = target / 80;
+                var timer = setInterval(function () {
+                    current = Math.min(current + step, target);
+                    el.textContent = Math.floor(current) + suffix;
+                    if (current >= target) clearInterval(timer);
+                }, 16);
+            });
+        }
+
+        var statsSection = document.getElementById('stats');
+        if (statsSection && 'IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries, obs) {
+                if (entries[0].isIntersecting) {
+                    animateCounters();
+                    obs.disconnect();
+                }
+            }, { threshold: 0.3 }).observe(statsSection);
+        }
 
         // フォームバリデーション
         (() => {
