@@ -26,10 +26,17 @@
     <!-- AOS Library CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d3748;
+            --accent-color: #4299e1;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+        }
+
         body {
             font-family: 'Inter', 'Noto Sans JP', sans-serif;
             /* 全体のグラデーション背景 (ライトモード設定) */
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -38,35 +45,65 @@
         }
 
         [data-bs-theme="dark"] body {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, #171923 0%, #2d3748 100%);
         }
 
         main {
             flex: 1;
         }
 
+        .navbar {
+            background-color: var(--primary-color) !important;
+            backdrop-filter: blur(10px);
+        }
+
         .hero {
-            /* ヒーローセクションの鮮やかなグラデーション */
-            background: linear-gradient(45deg, #007bff, #6610f2);
+            /* ヒーローセクションの背景画像とグラデーションの重ね合わせ */
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(66, 153, 225, 0.7)), url('assets/hero_bg.png');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 100px 0;
+            padding: 160px 0;
             text-align: center;
         }
 
         .service-card {
             transition: transform 0.3s, box-shadow 0.3s;
-            background: rgba(255, 255, 255, 0.9);
-            /* 少し透過させて背景のグラデーションを活かす */
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.1);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #3182ce;
+            border-color: #3182ce;
         }
 
         .form-container {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
@@ -173,8 +210,8 @@
                     <!-- サービス1 -->
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="card h-100 service-card border-0 rounded-4 shadow-sm">
+                            <img src="assets/service_web.png" alt="Web開発">
                             <div class="card-body text-center p-4">
-                                <i class="bi bi-laptop display-4 text-primary d-block mb-3"></i>
                                 <h5 class="card-title fw-bold">Web開発</h5>
                                 <p class="card-text text-muted">使いやすさとデザイン性を両立した、高品質なコーポレートサイトやWebシステムを構築します。</p>
                             </div>
@@ -183,8 +220,8 @@
                     <!-- サービス2 -->
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="card h-100 service-card border-0 rounded-4 shadow-sm">
+                            <img src="assets/service_app.png" alt="アプリ開発">
                             <div class="card-body text-center p-4">
-                                <i class="bi bi-phone display-4 text-success d-block mb-3"></i>
                                 <h5 class="card-title fw-bold">アプリ開発</h5>
                                 <p class="card-text text-muted">ユーザー体験（UX）を最適化したiOS/Android向けのスマートフォンアプリを開発します。</p>
                             </div>
@@ -193,8 +230,8 @@
                     <!-- サービス3 -->
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="card h-100 service-card border-0 rounded-4 shadow-sm">
+                            <img src="assets/service_cloud.png" alt="クラウド構築">
                             <div class="card-body text-center p-4">
-                                <i class="bi bi-cloud-check display-4 text-info d-block mb-3"></i>
                                 <h5 class="card-title fw-bold">クラウド構築</h5>
                                 <p class="card-text text-muted">AWSやGCPを活用し、安定性・セキュリティ・拡張性に優れたクラウドインフラをご提供します。</p>
                             </div>
