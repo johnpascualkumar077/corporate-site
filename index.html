@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社サンプル - コーポレートサイト</title>
+    <title>株式会社サンプル - 未来を創造するITパートナー</title>
+    <meta name="description" content="株式会社サンプルは、Web開発、アプリ開発、クラウド構築を通じてお客様のビジネスを支援するITソリューション企業です。">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="株式会社サンプル - コーポレートサイト">
+    <meta property="og:description" content="最新のテクノロジーとデザインで、あなたのビジネスを次のステージへ。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://johnpascualkumar077.github.io/corporate-site/">
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/building.svg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- AOS Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body {
-            /* 全体のグラデーション背景 */
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            /* 全体のグラデーション背景 (ライトモード設定) */
             background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            color: #333;
+            color: var(--bs-body-color);
+            transition: background-color 0.3s, color 0.3s;
         }
+
+        [data-bs-theme="dark"] body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+        }
+
         main {
             flex: 1;
         }
+
         .hero {
             /* ヒーローセクションの鮮やかなグラデーション */
             background: linear-gradient(45deg, #007bff, #6610f2);
@@ -27,33 +52,42 @@
             padding: 100px 0;
             text-align: center;
         }
+
         .service-card {
             transition: transform 0.3s, box-shadow 0.3s;
-            background: rgba(255, 255, 255, 0.9); /* 少し透過させて背景のグラデーションを活かす */
+            background: rgba(255, 255, 255, 0.9);
+            /* 少し透過させて背景のグラデーションを活かす */
         }
+
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
+
         .form-container {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
         }
     </style>
 </head>
-<body>
+
+<body data-bs-theme="light">
 
     <!-- ヘッダー / ハンバーガーメニュー -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">株式会社サンプル</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">お知らせ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">会社概要</a>
@@ -62,7 +96,19 @@
                         <a class="nav-link" href="#services">サービス</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#access">アクセス</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">お問い合わせ</a>
+                    </li>
+                    <!-- ダークモード切り替えスイッチ -->
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-light btn-sm rounded-pill" id="darkModeToggle">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -72,15 +118,41 @@
     <main>
         <!-- ヒーローセクション -->
         <section class="hero shadow">
-            <div class="container">
+            <div class="container" data-aos="zoom-in" data-aos-duration="1000">
                 <h1 class="display-4 fw-bold mb-4">未来を創造するパートナー</h1>
                 <p class="lead mb-0">最新のテクノロジーとデザインで、あなたのビジネスを次のステージへ。</p>
             </div>
         </section>
 
+        <!-- お知らせ (News) -->
+        <section id="news" class="py-5">
+            <div class="container" data-aos="fade-up">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fw-bold mb-0">お知らせ</h2>
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">一覧を見る</a>
+                </div>
+                <div class="list-group list-group-flush shadow-sm rounded-4 overflow-hidden">
+                    <a href="#" class="list-group-item list-group-item-action p-3">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">ニュースリリース</h6>
+                            <small class="text-muted">2026.03.01</small>
+                        </div>
+                        <p class="mb-1">Webサイトを全面リニューアルいたしました。</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action p-3">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1 fw-bold text-primary">メディア掲載</h6>
+                            <small class="text-muted">2026.02.15</small>
+                        </div>
+                        <p class="mb-1">ITトレンドマガジンにて弊社サービスが紹介されました。</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- 会社概要 -->
         <section id="about" class="py-5">
-            <div class="container text-center">
+            <div class="container text-center" data-aos="fade-up">
                 <h2 class="mb-4 fw-bold">会社概要</h2>
                 <div class="row justify-content-center">
                     <div class="col-md-8">
@@ -99,7 +171,7 @@
                 <h2 class="text-center mb-5 fw-bold">サービス紹介</h2>
                 <div class="row g-4">
                     <!-- サービス1 -->
-                    <div class="col-md-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="card h-100 service-card border-0 rounded-4 shadow-sm">
                             <div class="card-body text-center p-4">
                                 <i class="bi bi-laptop display-4 text-primary d-block mb-3"></i>
@@ -109,7 +181,7 @@
                         </div>
                     </div>
                     <!-- サービス2 -->
-                    <div class="col-md-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="card h-100 service-card border-0 rounded-4 shadow-sm">
                             <div class="card-body text-center p-4">
                                 <i class="bi bi-phone display-4 text-success d-block mb-3"></i>
@@ -119,7 +191,7 @@
                         </div>
                     </div>
                     <!-- サービス3 -->
-                    <div class="col-md-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="card h-100 service-card border-0 rounded-4 shadow-sm">
                             <div class="card-body text-center p-4">
                                 <i class="bi bi-cloud-check display-4 text-info d-block mb-3"></i>
@@ -132,27 +204,105 @@
             </div>
         </section>
 
+        <!-- よくある質問 (FAQ) -->
+        <section id="faq" class="py-5">
+            <div class="container" data-aos="fade-up">
+                <h2 class="text-center mb-5 fw-bold">よくある質問</h2>
+                <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden" id="accordionFAQ">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne">
+                                制作期間はどれくらいですか？
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body text-muted">
+                                プロジェクトの規模によりますが、一般的なコーポレートサイトであれば1ヶ月〜2ヶ月程度が目安となります。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo">
+                                対応エリアを教えてください。
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body text-muted">
+                                オンラインでの打ち合わせが可能ですので、日本全国および海外からのご依頼にも対応しております。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree">
+                                運用保守のみの依頼は可能ですか？
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body text-muted">
+                                はい、可能です。他社様が制作されたサイトの引き継ぎや、セキュリティアップデート等の保守のみも承っております。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- アクセス (Access) -->
+        <section id="access" class="py-5 bg-white bg-opacity-25">
+            <div class="container" data-aos="fade-up">
+                <h2 class="text-center mb-5 fw-bold">アクセス</h2>
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <h5 class="fw-bold"><i class="bi bi-geo-alt-fill text-danger me-2"></i>本社所在地</h5>
+                        <p class="mb-4">〒100-0005<br>東京都千代田区丸の内1-1-1<br>サンプルビル 10F</p>
+                        <h5 class="fw-bold"><i class="bi bi-telephone-fill text-success me-2"></i>お電話番号</h5>
+                        <p class="mb-0">03-1234-5678</p>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Google Maps Placeholder (styled div) -->
+                        <div class="rounded-4 overflow-hidden shadow-sm" style="height: 300px;">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8280303808788!2d139.7649361152588!3d35.68123618019432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f713b%3A0x2077efca135f284a!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1625000000000!5m2!1sja!2sjp"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- お問い合わせフォーム -->
         <section id="contact" class="py-5">
-            <div class="container">
+            <div class="container" data-aos="fade-up">
                 <h2 class="text-center mb-5 fw-bold">お問い合わせ</h2>
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6">
-                        <form class="form-container p-4 p-md-5 rounded-4 shadow">
+                        <form class="form-container p-4 p-md-5 rounded-4 shadow needs-validation" novalidate>
                             <div class="mb-3">
                                 <label for="name" class="form-label fw-bold">お名前</label>
-                                <input type="text" class="form-control form-control-lg bg-light" id="name" placeholder="山田 太郎" required>
+                                <input type="text" class="form-control form-control-lg bg-light bg-opacity-75" id="name"
+                                    placeholder="山田 太郎" required>
+                                <div class="invalid-feedback">お名前を入力してください。</div>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label fw-bold">メールアドレス</label>
-                                <input type="email" class="form-control form-control-lg bg-light" id="email" placeholder="example@example.com" required>
+                                <input type="email" class="form-control form-control-lg bg-light bg-opacity-75"
+                                    id="email" placeholder="example@example.com" required>
+                                <div class="invalid-feedback">正しいメールアドレスを入力してください。</div>
                             </div>
                             <div class="mb-4">
                                 <label for="message" class="form-label fw-bold">お問い合わせ内容</label>
-                                <textarea class="form-control form-control-lg bg-light" id="message" rows="5" placeholder="ご相談内容をご記入ください" required></textarea>
+                                <textarea class="form-control form-control-lg bg-light bg-opacity-75" id="message"
+                                    rows="5" placeholder="ご相談内容をご記入ください" required></textarea>
+                                <div class="invalid-feedback">お問い合わせ内容を入力してください。</div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill fw-bold">送信する</button>
+                                <button type="submit"
+                                    class="btn btn-primary btn-lg w-100 rounded-pill fw-bold shadow">送信する</button>
                             </div>
                         </form>
                     </div>
@@ -174,7 +324,53 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle (ハンバーガーメニュー等の動作に必要) -->
+    <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOS初期化
+        AOS.init({
+            once: true,
+            duration: 800,
+            offset: 100
+        });
+
+        // ダークモード切り替えロジック
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const bodyTag = document.body;
+        const icon = darkModeToggle.querySelector('i');
+
+        darkModeToggle.addEventListener('click', () => {
+            const currentTheme = bodyTag.getAttribute('data-bs-theme');
+            if (currentTheme === 'light') {
+                bodyTag.setAttribute('data-bs-theme', 'dark');
+                icon.classList.replace('bi-moon-stars', 'bi-sun');
+                darkModeToggle.classList.replace('btn-outline-light', 'btn-light');
+                darkModeToggle.classList.add('text-dark');
+            } else {
+                bodyTag.setAttribute('data-bs-theme', 'light');
+                icon.classList.replace('bi-sun', 'bi-moon-stars');
+                darkModeToggle.classList.replace('btn-light', 'btn-outline-light');
+                darkModeToggle.classList.remove('text-dark');
+            }
+        });
+
+        // フォームバリデーション
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
+
 </html>
